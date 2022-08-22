@@ -11,7 +11,8 @@ namespace AutoMapperDemo
         {
             CreateMap<User, UserForUI>()
                 .ForMember(dest => dest.FName, opt => opt.MapFrom(src => src.FirstName))
-                .ForMember(dest => dest.LName, opt => opt.MapFrom(src => src.LastName));
+                .ForMember(dest => dest.LName, opt => opt.MapFrom(src => src.LastName))
+                .ReverseMap();      //This allows a reverse map...as the name suggests!
         }
     }
 }
